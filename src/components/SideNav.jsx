@@ -8,11 +8,13 @@ import { useProSidebar } from 'react-pro-sidebar';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import { Link, useLocation } from 'react-router-dom';
 
 export const SideNav = () => {
   
   const theme = useTheme();
   const { collapsed } = useProSidebar();
+  const location = useLocation();
   
   return (
     <Sidebar  style={
@@ -30,14 +32,22 @@ export const SideNav = () => {
         {!collapsed ? <Typography variant='overline' sx={styles.userName}>Wilson Machado</Typography> : null}
         {!collapsed ? <Typography variant='body2'>Administrator</Typography> : null}
       </Box>
-      <Menu>
-        <MenuItem active icon={<DashboardIcon/>}>
+      <Menu menuItemStyles={
+        {
+          button: ({active} ) => {
+            return{
+              backgroundColor: active ? theme.palette.neutral.medium : undefined
+            }
+          }
+        }
+      }>
+        <MenuItem active={location.pathname === '/'} component={<Link to={'/'} />} icon={<DashboardIcon/>}>
           <Typography variant='body2'>Dashboard</Typography>
         </MenuItem>
-        <MenuItem active icon={<InventoryIcon/>}>
+        <MenuItem active={location.pathname === '/products'} component={<Link to={'/products'} />} icon={<InventoryIcon/>}>
           <Typography variant='body2'>Products</Typography>
         </MenuItem>
-        <MenuItem active icon={<AttachMoneyIcon/>}>
+        <MenuItem active={location.pathname === '/revenues'} component={<Link to={'/revenues'} />} icon={<AttachMoneyIcon/>}>
           <Typography variant='body2'>Revenues</Typography>
         </MenuItem>
       </Menu>

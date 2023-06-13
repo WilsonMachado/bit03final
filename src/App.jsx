@@ -4,12 +4,17 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
 import './App.css'
 
 import { AppHeader } from './components/AppHeader';
 import { SideNav } from './components/SideNav';
 import { ProSidebarProvider } from 'react-pro-sidebar';
 import theme from './config/theme';
+import { AppRoutes } from './router/AppRoutes';
+
 
 function App() { 
 
@@ -20,9 +25,12 @@ function App() {
         <CssBaseline />
         <AppHeader />
         <Box sx={styles.container}>
-          <SideNav />
-          <Box component={'main'} sx={styles.mainSection}>            
-          </Box>
+          <BrowserRouter>
+            <SideNav />
+            <Box component={'main'} sx={styles.mainSection}>
+              <AppRoutes />
+            </Box>
+          </BrowserRouter>
         </Box>
         </ProSidebarProvider>
       </ThemeProvider>
