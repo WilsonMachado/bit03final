@@ -8,7 +8,7 @@ import './App.css'
 
 import { AppHeader } from './components/AppHeader';
 import { SideNav } from './components/SideNav';
-
+import { ProSidebarProvider } from 'react-pro-sidebar';
 import theme from './config/theme';
 
 function App() { 
@@ -16,14 +16,15 @@ function App() {
   return (
     <React.Fragment>
       <ThemeProvider theme={theme}>
+        <ProSidebarProvider>
         <CssBaseline />
         <AppHeader />
         <Box sx={styles.container}>
           <SideNav />
-          <Box component={'main'} sx={styles.mainSection}>
-            
+          <Box component={'main'} sx={styles.mainSection}>            
           </Box>
         </Box>
+        </ProSidebarProvider>
       </ThemeProvider>
     </React.Fragment>
   );

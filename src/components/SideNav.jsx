@@ -1,6 +1,9 @@
-import { Box, Typography, useTheme, Avatar } from '@mui/material'
 import React from 'react'
+
+import { Box, Typography, useTheme, Avatar } from '@mui/material'
+
 import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar'
+import { useProSidebar } from 'react-pro-sidebar';
 
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import InventoryIcon from '@mui/icons-material/Inventory';
@@ -9,6 +12,7 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 export const SideNav = () => {
   
   const theme = useTheme();
+  const { collapsed } = useProSidebar();
   
   return (
     <Sidebar  style={
@@ -23,8 +27,8 @@ export const SideNav = () => {
     backgroundColor={theme.palette.neutral.light}>
       <Box sx={styles.avatarContainer}>
         <Avatar sx={styles.avatar} alt='user'src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'/>
-        <Typography variant='overline' sx={styles.userName}>Wilson Machado</Typography>
-        <Typography variant='body2'>Administrator</Typography>
+        {!collapsed ? <Typography variant='overline' sx={styles.userName}>Wilson Machado</Typography> : null}
+        {!collapsed ? <Typography variant='body2'>Administrator</Typography> : null}
       </Box>
       <Menu>
         <MenuItem active icon={<DashboardIcon/>}>
