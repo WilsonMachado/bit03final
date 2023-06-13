@@ -11,6 +11,7 @@ export const AppHeader = () => {
                 <MenuIcon />
             </IconButton>
             <Box component='img' sx={styles.appLogo} src='https://d1csarkz8obe9u.cloudfront.net/posterpreviews/e-commerce-online-shop-design-template-aa02d6dc00d6567d0408bebdb3e5fab3.jpg'></Box>
+            <Box sx={{flexGrow: 1}}/>
             <IconButton onClick={() => console.log('Logout')} color="secondary">
                 <LogoutIcon />
             </IconButton>
