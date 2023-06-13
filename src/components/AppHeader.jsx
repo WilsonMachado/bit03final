@@ -28,7 +28,7 @@ const styles = {
     },
     appLogo: {
         borderRadius: 100,
-        width: 0.3,
+        width: 0.03,
         ml: 5,
         mr: 5,
         cursor: 'pointer'
