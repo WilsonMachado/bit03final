@@ -19,8 +19,7 @@ export const Dashboard = () => {
         </Box>
         <Box sx={styles.item}>        
             <CardCustom />
-        </Box>
-        
+        </Box> 
              
 
       </Box>
