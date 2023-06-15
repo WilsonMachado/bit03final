@@ -41,7 +41,7 @@ export const SideNav = () => {
           }
         }
       }>
-        <MenuItem active={location.pathname === '/'} component={<Link to={'/'} />} icon={<DashboardIcon/>}>
+        <MenuItem active={location.pathname === '/bit03final'} component={<Link to={'/bit03final'} />} icon={<DashboardIcon/>}>
           <Typography variant='body2'>Dashboard</Typography>
         </MenuItem>
       </Menu>
