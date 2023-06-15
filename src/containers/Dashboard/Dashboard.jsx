@@ -1,11 +1,43 @@
 import { Box,  Typography } from '@mui/material'
 import React from 'react'
+import { useEffect, useState } from 'react';
 
 import { CardCustom } from '../../components/CardCustom' 
 import { CardStats } from '../../components/cardStats'
 import { RealtimeChart } from '../../components/RealtimeChart'
 
 export const Dashboard = () => {
+
+    const [totalProducts, setTotalProducts] = useState(0);
+    const [averagePrice, setAveragePrice] = useState(0);
+    const [bestSellingProducts, setBestSellingProducts] = useState([]);
+
+  useEffect(() => {
+  
+    fetch('https://fakestoreapi.com/products')                      
+      .then(response => response.json())
+      .then(data => {
+            setTotalProducts(data.length);                                                                 //! Número total de productos en la tienda
+            
+            const prices = data.map(product => product.price);
+            const sum = prices.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+            const avg = sum / prices.length;
+            setAveragePrice(avg.toFixed(2));                                                               //! Precio promedio de productos en la tienda
+    
+        }
+      
+      )
+      .catch(error => console.log(error));
+      
+    
+    
+    fetch('https://fakestoreapi.com/products?sort=desc&limit=4')    
+    .then(response => response.json())
+    .then(data => setBestSellingProducts(data))                                                            //! Productos más vendidos
+    .catch(error => console.log(error));  
+  
+    }, []);
+
   return (
       <>
       <Typography sx={styles.pageTitle} variant='h5'>Dashboard</Typography>
@@ -37,12 +69,15 @@ export const Dashboard = () => {
         
         <Box sx={styles.item}>        
             <CardStats />
-        </Box>       
-                
-        
-        
+        </Box>               
       
       </Box> 
+
+      <button onClick={() => {
+        console.log('Total productos:', totalProducts)
+        console.log('Precio promedio:', averagePrice)
+        console.log('Más vendidos:', bestSellingProducts)
+      }}>Mostrart stats</button>
       
       </>
     
