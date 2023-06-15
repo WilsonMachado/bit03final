@@ -99,19 +99,11 @@ export const Dashboard = () => {
         </Box>       
         
         <Box sx={styles.item}>        
-            <CardStats />
+            <CardStats totalProducts={totalProducts} averagePrice={averagePrice} totalOrders={totalOrders} totalRevenue={totalRevenue}/>
         </Box>               
       
       </Box> 
-
-      <button onClick={() => {
-        console.log('Total productos:', totalProducts)
-        console.log('Precio promedio:', averagePrice)
-        console.log('Más vendidos:', bestSellingProducts)
-        console.log('Número de pedidos', totalOrders)
-        console.log('Ingresos totales', totalRevenue)
-      }}>Mostrart stats</button>
-      
+            
       </>
     
     )

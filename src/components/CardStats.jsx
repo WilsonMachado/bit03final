@@ -2,30 +2,29 @@ import { Card, CardContent, Typography, Box, Divider } from '@mui/material'
 import React from 'react'
 
 import { ColorText } from './ColorText'
-import { green } from '@mui/material/colors'
 
-export const CardStats = (props) => {
+export const CardStats = ({totalProducts, averagePrice, totalOrders, totalRevenue}) => {
   return (
     <Card>
         <CardContent>
             <Typography variant='cardTitle' sx={styles.cardTitle}>Store analytics</Typography>  
             
-            <Typography variant='h4'>4,576</Typography>  
+            <Typography variant='h4'>{totalProducts}</Typography>  
             <Typography variant='h6'><ColorText color={'neutral.normal'}>Number of products in store</ColorText></Typography>
             
             <Divider sx={styles.divider}/>
             
-            <Typography variant='h4'>4,576</Typography>  
+            <Typography variant='h4'>${averagePrice}</Typography>  
             <Typography variant='h6'><ColorText color={'neutral.normal'}>Average price of products</ColorText></Typography>  
             
             <Divider sx={styles.divider}/>
             
-            <Typography variant='h4'>4,576</Typography>  
+            <Typography variant='h4'>{totalOrders}</Typography>  
             <Typography variant='h6'><ColorText color={'neutral.normal'}>Total number of orders placed</ColorText></Typography>  
             
             <Divider sx={styles.divider}/>
             
-            <Typography variant='h4'>4,576</Typography>  
+            <Typography variant='h4'>${totalRevenue}</Typography>  
             <Typography variant='h6'><ColorText color={'neutral.normal'}>Total revenues generated</ColorText></Typography>  
             
         </CardContent>
