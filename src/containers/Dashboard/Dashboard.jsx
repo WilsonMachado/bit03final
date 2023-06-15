@@ -73,18 +73,18 @@ export const Dashboard = () => {
       
       <Box sx={styles.columnContainer}>
 
-        <Box sx={styles.item}>        
-            <CardCustom />
-        </Box>
-        <Box sx={styles.item}>        
-            <CardCustom />
-        </Box>
-        <Box sx={styles.item}>        
-            <CardCustom />
-        </Box>
-        <Box sx={styles.item}>        
-            <CardCustom />
-        </Box>
+        {bestSellingProducts.map((product) => (
+            <Box sx={styles.item}>
+                <CardCustom
+                key={product.id}
+                productName={product.title}
+                productImage={product.image}
+                productDescription={product.description}
+                productPrice={''}
+                />
+            </Box>
+        ))}        
+        
       </Box>
       
       <Typography sx={styles.pageSubtitle} variant='h6'>Analytics</Typography>
@@ -126,8 +126,13 @@ const styles = {
         alignItems: 'center'
     },   
     columnContainer: {
-        columns: '300px 4',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, 1fr)',
+        gap: '20px',
+        alignItems: 'center',
+        justifyContent: 'center',
         maxWidth: 1600,
+        
         mt: 2,
         justifyContent: 'center', 
 

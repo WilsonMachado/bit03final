@@ -28,7 +28,9 @@ const styles = {
          mt: 2
     },   
     cardImage: {
-        width: '100%',
+        width: '80%',
+        justifyContent: 'center',
+        mx: 'auto',
         mt: 1,
         filter: 'bridhtness(20%)',
         display: 'block',
