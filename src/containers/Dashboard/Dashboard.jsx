@@ -2,6 +2,7 @@ import { Box,  Typography } from '@mui/material'
 import React from 'react'
 
 import { CardCustom } from '../../components/CardCustom' 
+import { CardStats } from '../../components/cardStats'
 
 export const Dashboard = () => {
   return (
@@ -19,6 +20,10 @@ export const Dashboard = () => {
         </Box>
         <Box sx={styles.item}>        
             <CardCustom />
+        </Box> 
+        
+        <Box sx={styles.item}>        
+            <CardStats />
         </Box> 
              
 
@@ -41,8 +46,8 @@ const styles = {
         alignItems: 'center'
     },   
     columnContainer: {
-        columns: '280px 3',
-        maxWidth: 1440,
+        columns: '300px 3',
+        maxWidth: 1600,
         mt: 2,
         justifyContent: 'center',
         
