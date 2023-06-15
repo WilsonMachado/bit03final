@@ -13,7 +13,9 @@ En este respositorio se encuentra mi proyecto final para el curso de desarrollo 
 - **Material** (para algunos componentes, íconos, fuentes y algunos estilos)
 - **SCSS y Styled Componentes** (para facilitar el uso de estilos dentro de los componentes)
 
+## ¡Una demo vale más que mil palabras!
 
+Puede visualizar cómo ha quedado este proyecto ingrsando a la [demo](wilsonmachado.github.io/bit03final)
 
 ## Autor
 
