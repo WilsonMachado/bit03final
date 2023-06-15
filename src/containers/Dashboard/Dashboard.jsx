@@ -69,7 +69,7 @@ export const Dashboard = () => {
   return (
       <>
       <Typography sx={styles.pageTitle} variant='h5'>Dashboard</Typography>
-      <Typography sx={styles.pageSubtitle} variant='h6'>Top products</Typography>
+      <Typography sx={styles.pageSubtitle} variant='h6'>Best selling products</Typography>
       
       <Box sx={styles.columnContainer}>
 
@@ -125,6 +125,7 @@ const styles = {
     },
     pageSubtitle: {
         mx: 'auto',
+        mt: '20px',
         textAlign: 'center',
         justifyContent: 'center',
         alignItems: 'center'

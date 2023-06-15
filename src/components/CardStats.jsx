@@ -11,12 +11,7 @@ export const CardStats = (props) => {
             <Typography variant='cardTitle' sx={styles.cardTitle}>Store analytics</Typography>  
             
             <Typography variant='h4'>4,576</Typography>  
-            <Typography variant='h6'><ColorText color={'neutral.normal'}>Number of products in store</ColorText></Typography>  
-            
-            <Divider sx={styles.divider}/>
-            
-            <Typography variant='h4'>4,576</Typography>  
-            <Typography variant='h6'><ColorText color={'neutral.normal'}>Best selling product in the store</ColorText></Typography>  
+            <Typography variant='h6'><ColorText color={'neutral.normal'}>Number of products in store</ColorText></Typography>
             
             <Divider sx={styles.divider}/>
             
