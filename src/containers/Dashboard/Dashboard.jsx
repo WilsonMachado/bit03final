@@ -12,6 +12,9 @@ export const Dashboard = () => {
     const [averagePrice, setAveragePrice] = useState(0);
     const [bestSellingProducts, setBestSellingProducts] = useState([]);
 
+    const [totalOrders, setTotalOrders] = useState(0);
+    const [totalRevenue, setTotalRevenue] = useState(0);
+
   useEffect(() => {
   
     fetch('https://fakestoreapi.com/products')                      
@@ -34,7 +37,32 @@ export const Dashboard = () => {
     fetch('https://fakestoreapi.com/products?sort=desc&limit=4')    
     .then(response => response.json())
     .then(data => setBestSellingProducts(data))                                                            //! Productos más vendidos
-    .catch(error => console.log(error));  
+    .catch(error => console.log(error));
+    
+    
+    fetch('https://fakestoreapi.com/carts')
+      .then(response => response.json())
+      .then(data => {
+      
+        setTotalOrders(data.length);                                                                      //! Número total de pedidos
+      
+        let revenue = 0;
+
+        data.forEach(cart => {
+          cart.products.forEach(async product => {
+            const productData = await fetch(`https://fakestoreapi.com/products/${product.productId}`);    
+            const productInfo = await productData.json();
+            const productPrice = productInfo.price;
+            const productQuantity = product.quantity;
+            revenue += productPrice * productQuantity;
+            setTotalRevenue(revenue.toFixed(2));                                                          //! Ganancias totales
+          });
+        });
+        
+        })
+      
+        .catch(error => console.log(error));
+
   
     }, []);
 
@@ -77,6 +105,8 @@ export const Dashboard = () => {
         console.log('Total productos:', totalProducts)
         console.log('Precio promedio:', averagePrice)
         console.log('Más vendidos:', bestSellingProducts)
+        console.log('Número de pedidos', totalOrders)
+        console.log('Ingresos totales', totalRevenue)
       }}>Mostrart stats</button>
       
       </>
