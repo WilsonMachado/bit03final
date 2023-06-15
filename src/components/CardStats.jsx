@@ -8,7 +8,7 @@ export const CardStats = (props) => {
   return (
     <Card>
         <CardContent>
-            <Typography variant='cardTitle' sx={styles.cardTitle}>Product analytics</Typography>  
+            <Typography variant='cardTitle' sx={styles.cardTitle}>Store analytics</Typography>  
             
             <Typography variant='h4'>4,576</Typography>  
             <Typography variant='h6'><ColorText color={'neutral.normal'}>Number of products in store</ColorText></Typography>  
@@ -22,6 +22,16 @@ export const CardStats = (props) => {
             
             <Typography variant='h4'>4,576</Typography>  
             <Typography variant='h6'><ColorText color={'neutral.normal'}>Average price of products</ColorText></Typography>  
+            
+            <Divider sx={styles.divider}/>
+            
+            <Typography variant='h4'>4,576</Typography>  
+            <Typography variant='h6'><ColorText color={'neutral.normal'}>Total number of orders placed</ColorText></Typography>  
+            
+            <Divider sx={styles.divider}/>
+            
+            <Typography variant='h4'>4,576</Typography>  
+            <Typography variant='h6'><ColorText color={'neutral.normal'}>Total revenues generated</ColorText></Typography>  
             
         </CardContent>
     </Card>
