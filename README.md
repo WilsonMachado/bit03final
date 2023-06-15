@@ -19,5 +19,5 @@ En este respositorio se encuentra mi proyecto final para el curso de desarrollo 
 
 - **Wilson Daniel Machado Toro** - [@WilsonMachado](https://github.com/WilsonMachado) 
 - Curso de desarrollo web conb React BIT (Bogotá Institute of Technology).
-- Grupo 09 - Especialista: Javier Andrés Garzón. 
+- Grupo 09 - Especialista: Javier Andrés Garzón - [@javierandres-dev](https://github.com/javierandres-dev)
 
