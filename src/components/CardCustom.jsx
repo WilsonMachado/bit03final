@@ -1,18 +1,18 @@
 import { Card, CardContent, Typography, Box } from '@mui/material'
 import React from 'react'
 
-export const CardCustom = (props) => {
+export const CardCustom = ({ productName, productImage, productDescription, productPrice }) => {
   return (
     <Card>
         <CardContent>
-            <Typography variant='cardTitle'>Título de la card</Typography>  
+            <Typography variant='cardTitle'>{productName}</Typography>  
             <Box sx={styles.principalCardContainer}>
 
-                <Box sx={styles.cardImage} component={'img'} src='https://placehold.co/600x400'></Box>
-                <Typography sx={styles.cardTitle}>Título de la card</Typography>
+                <Box sx={styles.cardImage} component={'img'} src={productImage}></Box>
+                <Typography sx={styles.cardTitle}>{productPrice}</Typography>
             </Box>
             <Box sx={styles.cardDescription}>
-            <Typography variant='h7'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora earum dignissimos mollitia vel asperiores, et laudantium hic sunt. Facilis delectus minima molestias qui officia enim alias dolorem assumenda maxime eligendi?</Typography>
+            <Typography variant='h7'>{productDescription}</Typography>
             </Box>
         </CardContent>
     </Card>
