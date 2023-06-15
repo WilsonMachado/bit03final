@@ -3,6 +3,7 @@ import React from 'react'
 
 import { CardCustom } from '../../components/CardCustom' 
 import { CardStats } from '../../components/cardStats'
+import { RealtimeChart } from '../../components/RealtimeChart'
 
 export const Dashboard = () => {
   return (
@@ -20,14 +21,28 @@ export const Dashboard = () => {
         </Box>
         <Box sx={styles.item}>        
             <CardCustom />
-        </Box> 
+        </Box>
+        <Box sx={styles.item}>        
+            <CardCustom />
+        </Box>
+      </Box>
+      
+      <Typography sx={styles.pageSubtitle} variant='h6'>Analytics</Typography>
+
+      <Box sx={styles.columnContainerStats}>
+
+        <Box sx={styles.item}>        
+            <RealtimeChart />
+        </Box>       
         
         <Box sx={styles.item}>        
             <CardStats />
-        </Box> 
-             
-
-      </Box>
+        </Box>       
+                
+        
+        
+      
+      </Box> 
       
       </>
     
@@ -46,14 +61,21 @@ const styles = {
         alignItems: 'center'
     },   
     columnContainer: {
-        columns: '300px 3',
+        columns: '300px 4',
         maxWidth: 1600,
         mt: 2,
-        justifyContent: 'center',
-        
+        justifyContent: 'center', 
+
+    },
+    columnContainerStats: {
+        columns: '300px 2',
+        maxWidth: 1600,
+        mt: 2,
+        justifyContent: 'center', 
 
     },
     item: {
         mb: 2
-    }
+    },
+    
   }
