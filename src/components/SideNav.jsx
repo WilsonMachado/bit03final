@@ -44,12 +44,6 @@ export const SideNav = () => {
         <MenuItem active={location.pathname === '/'} component={<Link to={'/'} />} icon={<DashboardIcon/>}>
           <Typography variant='body2'>Dashboard</Typography>
         </MenuItem>
-        <MenuItem active={location.pathname === '/products'} component={<Link to={'/products'} />} icon={<InventoryIcon/>}>
-          <Typography variant='body2'>Products</Typography>
-        </MenuItem>
-        <MenuItem active={location.pathname === '/revenues'} component={<Link to={'/revenues'} />} icon={<AttachMoneyIcon/>}>
-          <Typography variant='body2'>Revenues</Typography>
-        </MenuItem>
       </Menu>
     </Sidebar>
   )

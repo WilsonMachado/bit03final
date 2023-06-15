@@ -91,7 +91,10 @@ export const Dashboard = () => {
 
       <Box sx={styles.columnContainerStats}>
 
-        <Box sx={styles.item}>        
+        <Box sx={styles.item}>
+            <Typography sx={styles.chartTitle} variant='h6'>Total Customers</Typography>       
+            <RealtimeChart />
+            <Typography sx={styles.chartTitle} variant='h6'>Total Sellers</Typography>         
             <RealtimeChart />
         </Box>       
         
@@ -121,6 +124,14 @@ const styles = {
         mb: 2
     },
     pageSubtitle: {
+        mx: 'auto',
+        textAlign: 'center',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },   
+    chartTitle: {
+        fontSize: '0.8rem',
+        mt: 1,
         textAlign: 'center',
         justifyContent: 'center',
         alignItems: 'center'
