@@ -15,7 +15,7 @@ En este respositorio se encuentra mi proyecto final para el curso de desarrollo 
 
 ## ¡Una demo vale más que mil palabras!
 
-Puede visualizar cómo ha quedado este proyecto ingrsando a la [demo](wilsonmachado.github.io/bit03final)
+Puede visualizar cómo ha quedado este proyecto ingrsando a la [demo](https://wilsonmachado.github.io/bit03final)
 
 ## Autor
 
