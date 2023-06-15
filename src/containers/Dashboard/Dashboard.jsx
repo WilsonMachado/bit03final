@@ -137,9 +137,7 @@ const styles = {
         alignItems: 'center'
     },   
     columnContainer: {
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, 1fr)',
-        gap: '20px',
+        columns: '280px 4',
         alignItems: 'center',
         justifyContent: 'center',
         maxWidth: 1600,
