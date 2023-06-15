@@ -55,7 +55,7 @@ export const Dashboard = () => {
             const productPrice = productInfo.price;
             const productQuantity = product.quantity;
             revenue += productPrice * productQuantity;
-            setTotalRevenue(revenue.toFixed(2));                                                          //! Ganancias totales
+            setTotalRevenue(revenue.toFixed(2));                                                          //! Ganancias totales (con base en los pedidos)
           });
         });
         
